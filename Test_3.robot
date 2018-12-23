@@ -136,3 +136,8 @@ test_3
     Sleep    5s
     ${done_inc}=    Get Text    xpath=//h6[contains(.,'DONE')]/preceding-sibling::h1
     Should Be True    '${done_inc}' > '${done_count}'
+    #logging out
+    Wait Until Element Is Visible    xpath=//div[@class="hamburger-button i-hamburger"]    300
+    Click Element    xpath=//div[@class="hamburger-button i-hamburger"]
+    Wait Until Element Is Visible    xpath=//a//span[contains(.,"Logout")]    300
+    Click Element    xpath=//a//span[contains(.,"Logout")]
